@@ -18,8 +18,6 @@ Este projeto tem como objetivo desenvolver um sistema para o gerenciamento de bi
 - Consulta de disponibilidade de livros
 - Devolução de livros
 
----
-
 ## 📝 Checklist de Funcionalidades Futuras
 - [ ] Cadastro de usuários
 - [ ] Ajuste para Livros com mais de um exemplar. Hoje não existe a regra, caso tenha mais de um livro exemplar, automaticamente todos ficam indisponíveis.
@@ -35,5 +33,3 @@ Este projeto tem como objetivo desenvolver um sistema para o gerenciamento de bi
 - [ ] Interface web amigável
 - [ ] Testes automatizados
 - [ ] Deploy em servidor na nuvem
-
----
