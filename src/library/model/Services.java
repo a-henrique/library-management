@@ -43,4 +43,38 @@ public class Services {
             System.out.println(book);
         }
     }
+
+    public void borrowBook(ArrayList<Book> books, int id){
+        for (Book book : books){
+            if (book.getId() == id){
+                if (book.isBookAvailability()){
+                    book.setBookAvailability(false);
+                    System.out.println("Livro Emprestado com sucesso: " + book.getTitle());
+                } else {
+                    System.out.println("Livro já emprestado!");
+                }
+
+                return;
+            }
+        }
+
+        System.out.println("Livro com ID " + id + " não encontrado");
+    }
+
+    public void deliveredBook(ArrayList<Book> books, int id){
+        for (Book book : books){
+            if (book.getId() == id){
+                if(!book.isBookAvailability()){
+                    book.setBookAvailability(true);
+                    System.out.println("Livro devolvido: " + book.getTitle());
+                } else {
+                    System.out.println("O livro " + book.getTitle() + " não está emprestado!");
+                }
+                return;
+            }
+        }
+        System.out.println("Livro com ID " + id + " não encontrado");
+    }
+
+
 }

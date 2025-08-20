@@ -19,6 +19,15 @@ public class LibraryApp {
                 case 2:
                     services.listBook(books);
                     break;
+                case 3:
+                    System.out.println("Digite o id do livro que deseja pegar: ");
+                    int id = scanner.nextInt();
+                    services.borrowBook(books, id);
+                    break;
+                case 4:
+                    System.out.println("Digite o ID do livro que deseja devolver");
+                    id = scanner.nextInt();
+                    services.deliveredBook(books, id);
                 case 6:
                     break;
             }
