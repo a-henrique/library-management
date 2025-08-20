@@ -70,17 +70,16 @@ public class Services {
                 } else {
                     System.out.println("O livro " + book.getTitle() + " não está emprestado!");
                 }
-                return;
+            } else {
+                System.out.println("Livro com ID " + id + " não encontrado");
             }
         }
-        System.out.println("Livro com ID " + id + " não encontrado");
     }
 
     public void removeBook(ArrayList<Book> books, int id){
         for(int i = 0; i < books.size(); i++){
             System.out.println("Livro Removido: " + books.get(i).getTitle());
             books.remove(i);
-            return;
         }
     }
 }
