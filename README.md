@@ -2,21 +2,15 @@
 
 Este projeto tem como objetivo desenvolver um sistema para o gerenciamento de bibliotecas.
 
----
-
 ## 🚀 Tecnologias Utilizadas
 - **Linguagem:** Java
 - **Banco de Dados (atual):** Arrays em memória
 - **Banco de Dados (futuro):** MySQL ou SQL
 - **Outros:** (adicione libs, ferramentas ou frameworks conforme for usando)
 
----
-
 ## 📂 Estrutura do Projeto
 
 - Em construção...
-
----
 
 ## ⚙️ Funcionalidades Atuais
 - Cadastro de livros em memória
