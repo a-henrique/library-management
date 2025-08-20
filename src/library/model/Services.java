@@ -76,5 +76,11 @@ public class Services {
         System.out.println("Livro com ID " + id + " não encontrado");
     }
 
-
+    public void removeBook(ArrayList<Book> books, int id){
+        for(int i = 0; i < books.size(); i++){
+            System.out.println("Livro Removido: " + books.get(i).getTitle());
+            books.remove(i);
+            return;
+        }
+    }
 }
