@@ -4,7 +4,8 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Book {
-    private static int id = 0;
+    private static int idCounter = 0;
+    private int id;
     private String title;
     private String author;
     private String publisher;
@@ -14,7 +15,8 @@ public class Book {
     private boolean bookAvailability;
 
     public Book(String title, String author, String publisher, int bookItem){
-        this.id += 1;
+        idCounter++;
+        this.id = idCounter;
         this.title = title;
         this.author = author;
         this.publisher = publisher;

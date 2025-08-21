@@ -33,6 +33,7 @@ Este projeto tem como objetivo desenvolver um sistema para o gerenciamento de bi
 - [ ] Relatórios (livros mais emprestados, usuários ativos, etc.)
 - [ ] Integração com API externa de livros (ex.: Google Books)
 - [ ] Notificações por e-mail para prazos de devolução
-- [ ] Interface web amigável
+- [ ] Interface web amigável (WEB)
 - [ ] Testes automatizados
 - [ ] Deploy em servidor na nuvem
+- [ ] Refatorar para Spring Web

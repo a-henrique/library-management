@@ -28,7 +28,7 @@ public class LibraryApp {
                     System.out.println("Digite o ID do livro que deseja devolver");
                     id = scanner.nextInt();
                     services.deliveredBook(books, id);
-
+                    break;
                 case 5:
                     System.out.println("Digite o ID do livro que deseja remover");
                     id = scanner.nextInt();

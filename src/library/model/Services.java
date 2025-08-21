@@ -41,23 +41,26 @@ public class Services {
         }
         for (Book book : books) {
             System.out.println(book);
+            System.out.println(book.getId());
         }
     }
 
     public void borrowBook(ArrayList<Book> books, int id){
         for (Book book : books){
             if (book.getId() == id){
-                if (book.isBookAvailability()){
-                    book.setBookAvailability(false);
+                if (book.getBookItem() > 0) {
+                    book.setBookItem(book.getBookItem() - 1);
                     System.out.println("Livro Emprestado com sucesso: " + book.getTitle());
+                    System.out.println("Restam " + book.getBookItem() + " exemplares");
+                    if (book.getBookItem() == 0){
+                        book.setBookAvailability(false);
+                    }
                 } else {
-                    System.out.println("Livro já emprestado!");
+                    System.out.println("O Livro não há exemplares disponíveis no momento");
                 }
-
                 return;
             }
         }
-
         System.out.println("Livro com ID " + id + " não encontrado");
     }
 
@@ -80,6 +83,9 @@ public class Services {
         for(int i = 0; i < books.size(); i++){
             System.out.println("Livro Removido: " + books.get(i).getTitle());
             books.remove(i);
+            return;
         }
     }
+
+
 }
