@@ -7,7 +7,7 @@ Este projeto tem como objetivo desenvolver um sistema para o gerenciamento de bi
 - **Linguagem:** Java
 - **Banco de Dados (atual):** Arrays em memória
 - **Banco de Dados (futuro):** SQL
-- **Outros:** (adicione libs, ferramentas ou frameworks conforme for usando)
+- **Outros:**
 
 
 ## 📂 Estrutura do Projeto
