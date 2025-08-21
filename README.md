@@ -25,7 +25,7 @@ Este projeto tem como objetivo desenvolver um sistema para o gerenciamento de bi
 ## 📝 Checklist de Funcionalidades Futuras
 - [ ] Cadastro de usuários
 - [ ] Ajuste para Livros com mais de um exemplar. Hoje não existe a regra, caso tenha mais de um livro exemplar, automaticamente todos ficam indisponíveis.
-- [ ] Migração do armazenamento em memória para banco de dados **MySQL/SQL**
+- [ ] Migração do armazenamento em memória para banco de dados **(SQL)**
 - [ ] Sistema de autenticação e login de usuários
 - [ ] Controle de diferentes perfis (Administrador, Bibliotecário, Leitor)
 - [ ] Reserva de livros
