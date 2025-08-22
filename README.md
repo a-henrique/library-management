@@ -23,17 +23,17 @@ Este projeto tem como objetivo desenvolver um sistema para o gerenciamento de bi
 
 
 ## 📝 Checklist de Funcionalidades Futuras
+- [x] Ajuste para Livros com mais de um exemplar. Hoje não existe a regra, caso tenha mais de um livro exemplar, automaticamente todos ficam indisponíveis.
 - [ ] Cadastro de usuários
-- [ ] Ajuste para Livros com mais de um exemplar. Hoje não existe a regra, caso tenha mais de um livro exemplar, automaticamente todos ficam indisponíveis.
-- [ ] Migração do armazenamento em memória para banco de dados **(SQL)**
 - [ ] Sistema de autenticação e login de usuários
 - [ ] Controle de diferentes perfis (Administrador, Bibliotecário, Leitor)
 - [ ] Reserva de livros
 - [ ] Histórico de empréstimos por usuário
 - [ ] Relatórios (livros mais emprestados, usuários ativos, etc.)
-- [ ] Integração com API externa de livros (ex.: Google Books)
 - [ ] Notificações por e-mail para prazos de devolução
-- [ ] Interface web amigável (WEB)
+- [ ] Migração do armazenamento em memória para banco de dados **(SQL)**
+- [ ] Refatorar para Spring Web
+- [ ] Integração com API externa de livros (ex.: Google Books)
 - [ ] Testes automatizados
 - [ ] Deploy em servidor na nuvem
-- [ ] Refatorar para Spring Web
+- [ ] Interface web amigável (WEB)
