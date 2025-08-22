@@ -8,6 +8,7 @@ public class Services {
     Scanner scanner = new Scanner(System.in);
 
     public int option(){
+        System.out.println("======== LIBRARY ========");
         System.out.println("Digite a opção desejada: ");
         System.out.println("[1] Add Book");
         System.out.println("[2] List Books");
@@ -41,7 +42,6 @@ public class Services {
         }
         for (Book book : books) {
             System.out.println(book);
-            System.out.println(book.getId());
         }
     }
 
@@ -53,6 +53,7 @@ public class Services {
                     System.out.println("Livro Emprestado com sucesso: " + book.getTitle());
                     System.out.println("Restam " + book.getBookItem() + " exemplares");
                     if (book.getBookItem() == 0){
+                        System.out.println("Você pegou o último exemplar disponível!");
                         book.setBookAvailability(false);
                     }
                 } else {
