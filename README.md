@@ -25,49 +25,49 @@ Este projeto tem como objetivo desenvolver um sistema para o gerenciamento de bi
 ## 📝 Checklist de Funcionalidades Finalizadas
 - [x] Ajuste para Livros com mais de um exemplar. Hoje não existe a regra, caso tenha mais de um livro exemplar, automaticamente todos ficam indisponíveis.
 ---
-### _Gerenciamento de Usuários_
+### _1. Gerenciamento de Usuários_
   - [ ] Cadastrar usuários (nome, ID, tipo: aluno, professor, visitante, etc.).
   - [ ] Remover usuários.
   - [ ] Atualizar dados de usuários.
   - [ ] Listar todos os usuários.
   - [ ] Cada usuário pode ter um histórico de empréstimos.
 ---
-### _Controle de empréstimo_
+### _2. Controle de empréstimo_
   - [ ] Definir prazo de devolução (ex.: 7 dias).
   - [ ] Marcar empréstimos atrasados. 
   - [ ] Calcular multa por atraso. 
   - [ ] Permitir renovar o empréstimo (se não houver reserva).
 ---
-### _Sistema de Reservas_
+### _3. Sistema de Reservas_
   - [ ] Usuário pode reservar um livro se todos os exemplares estiverem emprestados.
   - [ ] Quando um exemplar é devolvido, o próximo da fila de reservas é notificado (simulado).
 ---
-### _Busca Avançada_
+### _4. Busca Avançada_
   - [ ] Título
   - [ ] Autor
   - [ ] Assunto
   - [ ] Ano de publicação
   - [ ] Usar equalsIgnoreCase() e contains() para treinar filtragem de strings.
 ---
-### _Relatórios_
+### _5. Relatórios_
   - [ ] Quantos livros existem no acervo.
   - [ ] Quantos exemplares estão disponíveis vs. emprestados. 
   - [ ] Quantos empréstimos cada usuário já fez. 
   - [ ] Livros mais emprestados.
 ---
-### _Persistência em Arquivo_
+### _6. Persistência em Arquivo_
   - [ ] Salvar os dados em arquivo (.txt ou .csv) para não perder tudo ao fechar o programa. 
   - [ ] Ler os dados na inicialização do sistema. 
   - [ ] Depois, evoluir para usar MySQL/SQLite (quando quiser praticar banco de dados).
 ---
-### _Herança/Polimorfismo para Usuários_
+### _7. Herança/Polimorfismo para Usuários_
   - Diferenciar Usuário em subclasses:
   - [ ] Aluno → pode pegar até 3 livros por vez.
   - [ ] Professor → pode pegar até 5.
   - [ ] Visitante → só pode ler dentro da biblioteca. 
   - OBS: Treinar sobreposição de métodos (@Override) para regras diferentes de empréstimo.
 ---
-### _Tratamento de Exceções_
+### _8. Tratamento de Exceções_
 - Lidar com erros como:
 - [ ] Usuário não encontrado. 
 - [ ] Livro inexistente. 
@@ -77,7 +77,6 @@ Este projeto tem como objetivo desenvolver um sistema para o gerenciamento de bi
 ### _Funcionalidades Futuras_
 - [ ] Sistema de autenticação e login de usuários
 - [ ] Controle de diferentes perfis (Administrador, Bibliotecário, Leitor)
-- [ ] Reserva de livros
 - [ ] Histórico de empréstimos por usuário
 - [ ] Relatórios (livros mais emprestados, usuários ativos, etc.)
 - [ ] Notificações por e-mail para prazos de devolução
