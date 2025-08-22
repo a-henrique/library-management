@@ -22,7 +22,7 @@ Este projeto tem como objetivo desenvolver um sistema para o gerenciamento de bi
 - Devolução de livros
 
 
-## 📝 Checklist de Funcionalidades Futuras
+## 📝 Checklist de Funcionalidades Finalizadas
 - [x] Ajuste para Livros com mais de um exemplar. Hoje não existe a regra, caso tenha mais de um livro exemplar, automaticamente todos ficam indisponíveis.
 ---
 ### _Gerenciamento de Usuários_
