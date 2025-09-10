@@ -19,7 +19,7 @@ on:
 jobs:
   security-scan:
     name: Run Security Pipeline
-    uses: a-henrique/devsecops-pipeline/.github/workflows/security-scan.yml@main
+    uses: a-henrique/devsecops-lab/.github/workflows/security-scan.yml@main
     with:
       repository: ${{ github.repository }}
       ref: ${{ github.ref }}
