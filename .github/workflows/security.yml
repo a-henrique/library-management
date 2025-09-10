@@ -21,6 +21,8 @@ jobs:
     name: Run Security Pipeline
     uses: a-henrique/devsecops-pipeline/.github/workflows/security-scan.yml@main
     with:
+      repo-token: ${{ secrets.personal_access_token }}
+      configuration-path: ${{ inputs.config-path }}
       repository: ${{ github.repository }}
       ref: ${{ github.ref }}
       language: 'java'  # Ajuste conforme o projeto
