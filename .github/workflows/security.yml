@@ -25,5 +25,4 @@ jobs:
       ref: ${{ github.ref }}
       language: 'java'  # Ajuste conforme o projeto
       skip_tools: ${{ github.event.inputs.skip_tools || '' }}
-    secrets:
-      GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+    secrets: inherit
