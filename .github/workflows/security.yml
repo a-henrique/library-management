@@ -26,4 +26,4 @@ jobs:
       language: 'java'  # Ajuste conforme o projeto
       skip_tools: ${{ github.event.inputs.skip_tools || '' }}
     secrets:
-      GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }
+      GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
