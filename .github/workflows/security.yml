@@ -1,0 +1,28 @@
+name: Security Scan
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  # Permite execução manual
+  workflow_dispatch:
+    inputs:
+      skip_tools:
+        description: ''
+        required: false
+        default: ''
+      ref:
+        description: 'Branch/ref to scan'
+        required: false
+        default: 'main'
+
+jobs:
+  security-scan:
+    name: Run Security Pipeline
+    uses: a-henrique/devsecops-pipeline/.github/workflows/security-scan.yml@main
+    with:
+      repository: ${{ github.repository }}
+      ref: ${{ github.ref }}
+      language: 'java'  # Ajuste conforme o projeto
+      skip_tools: ${{ github.event.inputs.skip_tools || '' }}
+    secrets: inherit
