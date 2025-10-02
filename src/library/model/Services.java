@@ -15,7 +15,8 @@ public class Services {
         System.out.println("[3] Lending Book");
         System.out.println("[4] Delivery Book");
         System.out.println("[5] Delete Book");
-        System.out.println("[6] Finish Program");
+        System.out.println("[6] Add New User");
+        System.out.println("[7] Finish Program");
 
         int option = scanner.nextInt();
         scanner.nextLine();
@@ -86,5 +87,16 @@ public class Services {
             books.remove(i);
             return;
         }
+    }
+
+    public User addUser(){
+        System.out.println("Username: ");
+        String username = scanner.nextLine();
+        System.out.println("E-Mail: ");
+        String email = scanner.nextLine();
+        System.out.println("Password: ");
+        String password = scanner.nextLine();
+        System.out.println("User Registered Successfully!!");
+        return new User(username, email, password);
     }
 }

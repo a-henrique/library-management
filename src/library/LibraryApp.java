@@ -1,4 +1,8 @@
-package library.model;
+package library;
+
+import library.model.Book;
+import library.model.Services;
+import library.model.User;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -7,6 +11,7 @@ public class LibraryApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Book> books = new ArrayList<>();
+        ArrayList<User> users = new ArrayList<>();
 
         Services services = new Services();
         while(true){
@@ -34,6 +39,10 @@ public class LibraryApp {
                     id = scanner.nextInt();
                     services.removeBook(books, id);
                 case 6:
+                    System.out.println("Preencha com as informações abaixo: ");
+                    users.add(services.addUser());
+                    break;
+                case 7:
                     break;
             }
         }

@@ -81,9 +81,8 @@ public class Book {
         this.insertDate = insertDate;
     }
 
-    public Book setBookItem(int bookItem) {
+    public void setBookItem(int bookItem) {
         this.bookItem = bookItem;
-        return this;
     }
 
     public void setPublisherDate(Date publisherDate) {

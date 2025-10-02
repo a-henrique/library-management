@@ -4,43 +4,62 @@ import java.util.UUID;
 
 public class User {
 
-    private String name;
-    private String registration;
-    private String email;
+    final private String id;
+    private String user_email; // TODO Refatorar para user_email and the other variables
+    private String username; // TODO refactor to username and the other variables
     private String password;
+    private String typeUser;
 
-    public User(String name, String email, String password){
-        this.name = name;
-        this.email = email;
+    public User(String username, String email, String password){
+        this.username = username;
+        this.user_email = email;
         this.password = password;
-        this.registration = UUID.randomUUID().toString();
+        this.id = UUID.randomUUID().toString();
     }
 
-    public String getName(){
-        return name;
+    public String getUsername(){
+        return username;
     }
 
-    public String getEmail(){
-        return email;
+    public String getUser_email(){
+        return user_email;
     }
 
     public String getPassword(){
         return password;
     }
 
-    public String getRegistration(){
-        return registration;
+    public String getId(){
+        return id;
     }
 
-    public void setName(String name){
-        this.name = name;
+    public void setUsername(String username){
+        this.username = username;
     }
 
-    public void setEmail(String email){
-        this.email = email;
+    public void setUser_email(String email){
+        this.user_email = email;
     }
 
     public void setPassword(String newPassword){
         this.password = newPassword;
+    }
+
+    public String getTypeUser() {
+        return typeUser;
+    }
+
+    public void setTypeUser(String typeUser) {
+        this.typeUser = typeUser;
+    }
+
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", user_email='" + user_email + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", typeUser='" + typeUser + '\'' +
+                '}';
     }
 }
