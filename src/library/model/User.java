@@ -5,8 +5,8 @@ import java.util.UUID;
 public class User {
 
     final private String id;
-    private String user_email; // TODO Refatorar para user_email and the other variables
-    private String username; // TODO refactor to username and the other variables
+    private String user_email;
+    private String username;
     private String password;
     private String typeUser;
 
@@ -18,6 +18,7 @@ public class User {
         this.id = UUID.randomUUID().toString();
     }
 
+    // GETTERS
     public String getUsername(){
         return username;
     }
@@ -34,6 +35,11 @@ public class User {
         return id;
     }
 
+    public String getTypeUser() {
+        return typeUser;
+    }
+
+    // SETTERS
     public void setUsername(String username){
         this.username = username;
     }
@@ -46,20 +52,16 @@ public class User {
         this.password = newPassword;
     }
 
-    public String getTypeUser() {
-        return typeUser;
-    }
-
     public void setTypeUser(String typeUser) {
         this.typeUser = typeUser;
     }
 
+    @Override
     public String toString() {
         return "User{" +
                 "id='" + id + '\'' +
                 ", user_email='" + user_email + '\'' +
                 ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
                 ", typeUser='" + typeUser + '\'' +
                 '}';
     }
