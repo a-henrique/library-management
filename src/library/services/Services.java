@@ -1,4 +1,7 @@
-package library.model;
+package library.services;
+
+import library.model.Book;
+import library.model.User;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -8,15 +11,17 @@ public class Services {
     Scanner scanner = new Scanner(System.in);
 
     public int option(){
-        System.out.println("======== LIBRARY ========");
+        System.out.println("======== LIBRARIAN ========");
         System.out.println("Digite a opção desejada: ");
         System.out.println("[1] Add Book");
         System.out.println("[2] List Books");
         System.out.println("[3] Lending Book");
-        System.out.println("[4] Delivery Book");
+        System.out.println("[4] Return Book");
         System.out.println("[5] Delete Book");
         System.out.println("[6] Add New User");
-        System.out.println("[7] Finish Program");
+        System.out.println("[7] Remove User");
+        System.out.println("[8] List Users");
+        System.out.println("[0] Finish Program");
 
         int option = scanner.nextInt();
         scanner.nextLine();
@@ -98,5 +103,22 @@ public class Services {
         String password = scanner.nextLine();
         System.out.println("User Registered Successfully!!");
         return new User(username, email, password);
+    }
+
+    public void removeUser(ArrayList<User> users, int id){
+        for (int i = 0; i < users.size(); i++){
+            System.out.println("Usuário Removido: " + users.get(i).getUsername());
+            users.remove(i);
+            return;
+        }
+    }
+
+    public void listUser(ArrayList<User> users){
+        if(users.isEmpty()){
+            System.out.println("Lista de usuários vazia!");
+        }
+        for(User user : users){
+            System.out.println(user);
+        }
     }
 }

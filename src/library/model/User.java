@@ -14,6 +14,7 @@ public class User {
         this.username = username;
         this.user_email = email;
         this.password = password;
+        this.typeUser = "user";
         this.id = UUID.randomUUID().toString();
     }
 

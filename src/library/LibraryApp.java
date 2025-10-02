@@ -1,7 +1,7 @@
 package library;
 
 import library.model.Book;
-import library.model.Services;
+import library.services.Services;
 import library.model.User;
 
 import java.util.ArrayList;
@@ -43,6 +43,13 @@ public class LibraryApp {
                     users.add(services.addUser());
                     break;
                 case 7:
+                    System.out.println("Digite o id do usuário a ser removido: ");
+                    id = scanner.nextInt();
+                    services.removeUser(users, id);
+                case 8:
+                    services.listUser(users);
+                    break;
+                case 0:
                     break;
             }
         }
