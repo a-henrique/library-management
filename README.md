@@ -26,10 +26,10 @@ Este projeto tem como objetivo desenvolver um sistema para o gerenciamento de bi
 - [x] Ajuste para Livros com mais de um exemplar. Hoje não existe a regra, caso tenha mais de um livro exemplar, automaticamente todos ficam indisponíveis.
 ---
 ### _1. Gerenciamento de Usuários_
-  - [ ] Cadastrar usuários (nome, ID, tipo: aluno, professor, visitante, etc.).
-  - [ ] Remover usuários.
+  - [x] Cadastrar usuários (nome, ID, tipo: aluno, professor, visitante, etc.).
+  - [x] Remover usuários.
+  - [x] Listar todos os usuários.
   - [ ] Atualizar dados de usuários.
-  - [ ] Listar todos os usuários.
   - [ ] Cada usuário pode ter um histórico de empréstimos.
 ---
 ### _2. Controle de empréstimo_
