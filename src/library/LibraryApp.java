@@ -49,6 +49,10 @@ public class LibraryApp {
                 case 8:
                     services.listUser(users);
                     break;
+                case 9:
+                    System.out.println("Digite o id do usuário a ser editado: ");
+                    String uuid = scanner.nextLine();
+                    services.editUser(users, uuid);
                 case 0:
                     break;
             }

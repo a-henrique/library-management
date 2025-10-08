@@ -49,6 +49,7 @@ public class User {
     }
 
     public void setPassword(String newPassword){
+        // TODO: Encrypt Password
         this.password = newPassword;
     }
 

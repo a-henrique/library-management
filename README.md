@@ -30,6 +30,7 @@ Este projeto tem como objetivo desenvolver um sistema para o gerenciamento de bi
   - [x] Remover usuários.
   - [x] Listar todos os usuários.
   - [ ] Atualizar dados de usuários.
+    - [ ] Quando um usuário digitar a senha, tem que aparecer asteriscos *
   - [ ] Cada usuário pode ter um histórico de empréstimos.
 ---
 ### _2. Controle de empréstimo_

@@ -10,7 +10,7 @@ public class Services {
 
     Scanner scanner = new Scanner(System.in);
 
-    public int option(){
+    public int option() {
         System.out.println("======== LIBRARIAN ========");
         System.out.println("Digite a opção desejada: ");
         System.out.println("[1] Add Book");
@@ -21,6 +21,7 @@ public class Services {
         System.out.println("[6] Add New User");
         System.out.println("[7] Remove User");
         System.out.println("[8] List Users");
+        System.out.println("[9] Edit Users");
         System.out.println("[0] Finish Program");
 
         int option = scanner.nextInt();
@@ -28,7 +29,7 @@ public class Services {
         return option;
     }
 
-    public Book addBook(){
+    public Book addBook() {
         System.out.println("Book Title: ");
         String title = scanner.nextLine();
         System.out.println("Book Author: ");
@@ -41,8 +42,8 @@ public class Services {
         return new Book(title, author, publisher, bookItem);
     }
 
-    public void listBook(ArrayList<Book> books){
-        if(books.isEmpty()){
+    public void listBook(ArrayList<Book> books) {
+        if (books.isEmpty()) {
             System.out.println("Não há livros cadastrados!");
             return;
         }
@@ -51,14 +52,14 @@ public class Services {
         }
     }
 
-    public void borrowBook(ArrayList<Book> books, int id){
-        for (Book book : books){
-            if (book.getId() == id){
+    public void borrowBook(ArrayList<Book> books, int id) {
+        for (Book book : books) {
+            if (book.getId() == id) {
                 if (book.getBookItem() > 0) {
                     book.setBookItem(book.getBookItem() - 1);
                     System.out.println("Livro Emprestado com sucesso: " + book.getTitle());
                     System.out.println("Restam " + book.getBookItem() + " exemplares");
-                    if (book.getBookItem() == 0){
+                    if (book.getBookItem() == 0) {
                         System.out.println("Você pegou o último exemplar disponível!");
                         book.setBookAvailability(false);
                     }
@@ -71,10 +72,10 @@ public class Services {
         System.out.println("Livro com ID " + id + " não encontrado");
     }
 
-    public void deliveredBook(ArrayList<Book> books, int id){
-        for (Book book : books){
-            if (book.getId() == id){
-                if(!book.isBookAvailability()){
+    public void deliveredBook(ArrayList<Book> books, int id) {
+        for (Book book : books) {
+            if (book.getId() == id) {
+                if (!book.isBookAvailability()) {
                     book.setBookAvailability(true);
                     System.out.println("Livro devolvido: " + book.getTitle());
                 } else {
@@ -86,15 +87,15 @@ public class Services {
         }
     }
 
-    public void removeBook(ArrayList<Book> books, int id){
-        for(int i = 0; i < books.size(); i++){
+    public void removeBook(ArrayList<Book> books, int id) {
+        for (int i = 0; i < books.size(); i++) {
             System.out.println("Livro Removido: " + books.get(i).getTitle());
             books.remove(i);
             return;
         }
     }
 
-    public User addUser(){
+    public User addUser() {
         System.out.println("Username: ");
         String username = scanner.nextLine();
         System.out.println("E-Mail: ");
@@ -105,20 +106,56 @@ public class Services {
         return new User(username, email, password);
     }
 
-    public void removeUser(ArrayList<User> users, int id){
-        for (int i = 0; i < users.size(); i++){
+    public void removeUser(ArrayList<User> users, int id) {
+        for (int i = 0; i < users.size(); i++) {
             System.out.println("Usuário Removido: " + users.get(i).getUsername());
             users.remove(i);
             return;
         }
     }
 
-    public void listUser(ArrayList<User> users){
-        if(users.isEmpty()){
+    public void listUser(ArrayList<User> users) {
+        if (users.isEmpty()) {
             System.out.println("Lista de usuários vazia!");
         }
-        for(User user : users){
+        for (User user : users) {
             System.out.println(user);
+        }
+    }
+
+    public void editUser(ArrayList<User> users, String uuid) {
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).getId().equals(uuid)) {
+                System.out.println("[1] Name");
+                System.out.println("[2] Password");
+                System.out.println("[3] E-mail");
+                System.out.println("Which attributes would you like to edit?");
+                String option_edit = scanner.nextLine();
+                if (option_edit.equals("1")) {
+                    System.out.println("Enter a new username: ");
+                    String new_username = scanner.nextLine();
+                    users.get(i).setUsername(new_username);
+                } else if (option_edit.equals("2")){
+                    // TODO: It will need be adjust, because the password will be encrypted
+                    System.out.println("Enter Current Password: ");
+                    String currentPassword = scanner.nextLine();
+                    if(users.get(i).getPassword().equals(currentPassword)){
+                        System.out.println("Enter New Password: ");
+                        String newPassword = scanner.nextLine();
+                        users.get(i).setPassword(newPassword);
+                        System.out.println("Password Changed!");
+                    } else {
+                        System.out.println("Current Password doesn't match!");
+                    }
+                } else if (option_edit.equals("3")){
+                    System.out.println("Enter a new email: ");
+                    String newEmail = scanner.nextLine();
+                    users.get(i).setUser_email(newEmail);
+                    System.out.println("Email Changed!");
+                } else {
+                    System.out.println("Option Not Found!");
+                }
+            }
         }
     }
 }
