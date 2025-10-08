@@ -29,15 +29,15 @@ Este projeto tem como objetivo desenvolver um sistema para o gerenciamento de bi
   - [x] Cadastrar usuários (nome, ID, tipo: aluno, professor, visitante, etc.).
   - [x] Remover usuários.
   - [x] Listar todos os usuários.
-  - [ ] Atualizar dados de usuários.
+  - [x] Atualizar dados de usuários.
     - [ ] Quando um usuário digitar a senha, tem que aparecer asteriscos *
-  - [ ] Cada usuário pode ter um histórico de empréstimos.
 ---
 ### _2. Controle de empréstimo_
   - [ ] Definir prazo de devolução (ex.: 7 dias).
   - [ ] Marcar empréstimos atrasados. 
   - [ ] Calcular multa por atraso. 
   - [ ] Permitir renovar o empréstimo (se não houver reserva).
+  - [ ] Histórico de empréstimos.
 ---
 ### _3. Sistema de Reservas_
   - [ ] Usuário pode reservar um livro se todos os exemplares estiverem emprestados.
