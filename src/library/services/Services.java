@@ -8,7 +8,10 @@ import java.util.Scanner;
 
 public class Services {
 
+    ArrayList<Book> books = new ArrayList<>();
+    ArrayList<User> users = new ArrayList<>();
     Scanner scanner = new Scanner(System.in);
+
     public Book addBook() {
         System.out.println("Book Title: ");
         String title = scanner.nextLine();
@@ -52,7 +55,7 @@ public class Services {
         System.out.println("Livro com ID " + id + " não encontrado");
     }
 
-    public void deliveredBook(ArrayList<Book> books, int id) {
+    public void returnBook(ArrayList<Book> books, int id) {
         for (Book book : books) {
             if (book.getId() == id) {
                 if (!book.isBookAvailability()) {
