@@ -2,11 +2,7 @@ package library;
 
 import library.controller.Controller;
 
-import java.util.Scanner;
-
 public class Menu {
-
-    Scanner scanner = new Scanner(System.in);
 
     private Controller controller;
 
@@ -26,9 +22,9 @@ public class Menu {
         System.out.println("[8] List Users");
         System.out.println("[9] Edit Users");
         System.out.println("[0] Finish Program");
-        int option = scanner.nextInt();
-        scanner.nextLine();
+    }
 
+    public void choice(int option){
         switch (option){
             case 1:
                 controller.addBook();

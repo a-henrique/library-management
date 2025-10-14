@@ -15,22 +15,22 @@ public class Controller {
 
     // TODO: Setting params on the methods
     public void listBook() {
-        services.listBook();
+//        services.listBook();
     }
 
     // TODO: Setting params on the methods
     public void borrowBook() {
-        services.borrowBook();
+//        services.borrowBook();
     }
 
     // TODO: Setting params on the methods
     public void returnBook() {
-        services.returnBook();
+//        services.returnBook();
     }
 
     // TODO: Setting params on the methods
     public void removeBook() {
-        services.removeBook();
+//        services.removeBook();
     }
 
     // TODO: Setting params on the methods
@@ -40,16 +40,16 @@ public class Controller {
 
     // TODO: Setting params on the methods
     public void removeUser() {
-        services.removeUser();
+//        services.removeUser();
     }
 
     // TODO: Setting params on the methods
     public void listUser() {
-        services.listUser();
+//        services.listUser();
     }
 
     // TODO: Setting params on the methods
     public void editUser() {
-        services.editUser();
+//        services.editUser();
     }
 }
