@@ -12,35 +12,22 @@ public class Services {
     ArrayList<User> users = new ArrayList<>();
     Scanner scanner = new Scanner(System.in);
 
-    public void addBook() {
-        System.out.println("Book Title: ");
-        String title = scanner.nextLine();
-        System.out.println("Book Author: ");
-        String author = scanner.nextLine();
-        System.out.println("Book Publisher: ");
-        String publisher = scanner.nextLine();
-        System.out.println("Quantity exemplars: ");
-        int bookItem = scanner.nextInt();
-        scanner.nextLine(); // Gambiarra para o Int não pular a proxima linha
-        System.out.println("Livro adicionado!");
+    public void addBook(String title, String author, String publisher, int bookItem) {
         Book newBook = new Book(title, author, publisher, bookItem);
         books.add(newBook);
     }
 
-    public void listBook() {
+    public String listBook() {
         if (this.books.isEmpty()) {
-            System.out.println("Não há livros cadastrados!");
-            return;
+            return "Não há livros cadastrados!";
         }
         for (Book book : books) {
-            System.out.println(book);
+            return book.toString();
         }
+        return "";
     }
 
-    public void borrowBook() {
-        System.out.println("What book id would you take borrow?");
-        int id = scanner.nextInt();
-        scanner.nextLine();
+    public void borrowBook(int id) {
         for (Book book : books) {
             if (book.getId() == id) {
                 if (book.getBookItem() > 0) {
@@ -60,28 +47,23 @@ public class Services {
         System.out.println("Livro com ID " + id + " não encontrado");
     }
 
-    public void returnBook() {
-        System.out.println("What book id would you give return?");
-        int id = scanner.nextInt();
-        scanner.nextLine();
+    public String returnBook(int id) {
         for (Book book : books) {
             if (book.getId() == id) {
                 if (!book.isBookAvailability()) {
                     book.setBookAvailability(true);
-                    System.out.println("Livro devolvido: " + book.getTitle());
+                    return "Livro devolvido: " + book.getTitle();
                 } else {
-                    System.out.println("O livro " + book.getTitle() + " não está emprestado!");
+                    return "O livro " + book.getTitle() + " não está emprestado!";
                 }
             } else {
-                System.out.println("Livro com ID " + id + " não encontrado");
+                return "Livro com ID " + id + " não encontrado";
             }
         }
+        return "";
     }
 
-    public String removeBook() {
-        System.out.println("Qual o id do Livro que deseja remover?");
-        int id = scanner.nextInt();
-        scanner.nextLine();
+    public String removeBook(int id) {
         for (Book book : books) {
             if(book.getId() == id){
                 books.remove(book);
@@ -91,21 +73,12 @@ public class Services {
         return "NOT FOUND";
     }
 
-    public void addUser() {
-        System.out.println("Username: ");
-        String username = scanner.nextLine();
-        System.out.println("E-Mail: ");
-        String email = scanner.nextLine();
-        System.out.println("Password: ");
-        String password = scanner.nextLine();
-        System.out.println("User Registered Successfully!!");
+    public void addUser(String username, String email, String password) {
         User addNewUser = new User(username, email, password);
         users.add(addNewUser);
     }
 
-    public String removeUser() {
-        System.out.println("Qual id do usuário que deseja remover?");
-        String id = scanner.nextLine();
+    public String removeUser(String id) {
         for (User user : users){
             if(user.getId().equals(id)){
                 users.remove(user);
@@ -124,9 +97,7 @@ public class Services {
         }
     }
 
-    public void editUser() {
-        System.out.println("User id that would you like edit?");
-        String uuid = scanner.nextLine();
+    public void editUser(String uuid) {
         for (User user : users) {
             if (user.getId().equals(uuid)) {
                 System.out.println("[1] Name");
