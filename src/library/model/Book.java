@@ -15,6 +15,7 @@ public class Book {
     private boolean bookAvailability;
 
     public Book(String title, String author, String publisher, int bookItem){
+        // TODO: Refactor BookId
         idCounter++;
         this.id = idCounter;
         this.title = title;
@@ -96,7 +97,8 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "title='" + title + '\'' +
+                "id=" + id +
+                ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", publisher='" + publisher + '\'' +
                 ", insertDate=" + insertDate +
