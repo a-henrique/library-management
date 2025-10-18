@@ -1,28 +1,39 @@
-# 📚 Sistema de Gerenciamento de Biblioteca
+# 📚 Library Management System
 
-Este projeto tem como objetivo desenvolver um sistema para o gerenciamento de bibliotecas.
+This project is focus on construct a management system for libraries and focus in get better Java concepts
 
-
-## 🚀 Tecnologias Utilizadas
+## 🚀 Techonologies
 - **Linguagem:** Java
 - **Banco de Dados (atual):** Arrays em memória
 - **Banco de Dados (futuro):** SQL
 - **Outros:**
 
 
-## 📂 Estrutura do Projeto
+## 📂 Project Structure
 
-- Em construção...
+models/
+├── Book.java
+├── User.java
+└── Borrow.java
+
+services/
+├── BookService.java
+├── UserService.java
+└── BorrowService.java
+
+controllers/
+├── BookController.java
+├── UserController.java
+└── BorrowController.java
+
+## ⚙️ Features:
+- Book Registry
+- Borrow Registry
+- Search for Available books
+- Returned Books
 
 
-## ⚙️ Funcionalidades Atuais
-- Cadastro de livros em memória
-- Registro de empréstimos em memória
-- Consulta de disponibilidade de livros
-- Devolução de livros
-
-
-## 📝 Checklist de Funcionalidades Finalizadas
+## 📝 Features Accomplishing:
 - [x] Ajuste para Livros com mais de um exemplar. Hoje não existe a regra, caso tenha mais de um livro exemplar, automaticamente todos ficam indisponíveis.
 ---
 ### _1. Gerenciamento de Usuários_
@@ -30,7 +41,6 @@ Este projeto tem como objetivo desenvolver um sistema para o gerenciamento de bi
   - [x] Remover usuários.
   - [x] Listar todos os usuários.
   - [x] Atualizar dados de usuários.
-    - [ ] Quando um usuário digitar a senha, tem que aparecer asteriscos *
 ---
 ### _2. Controle de empréstimo_
   - [ ] Definir prazo de devolução (ex.: 7 dias).

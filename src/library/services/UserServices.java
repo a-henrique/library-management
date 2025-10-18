@@ -1,77 +1,8 @@
 package library.services;
 
-import library.model.Book;
 import library.model.User;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
-public class Services {
-
-    ArrayList<Book> books = new ArrayList<>();
-    ArrayList<User> users = new ArrayList<>();
-    Scanner scanner = new Scanner(System.in);
-
-    public void addBook(String title, String author, String publisher, int bookItem) {
-        Book newBook = new Book(title, author, publisher, bookItem);
-        books.add(newBook);
-    }
-
-    public String listBook() {
-        if (this.books.isEmpty()) {
-            return "Não há livros cadastrados!";
-        }
-        for (Book book : books) {
-            return book.toString();
-        }
-        return "";
-    }
-
-    public void borrowBook(int id) {
-        for (Book book : books) {
-            if (book.getId() == id) {
-                if (book.getBookItem() > 0) {
-                    book.setBookItem(book.getBookItem() - 1);
-                    System.out.println("Livro Emprestado com sucesso: " + book.getTitle());
-                    System.out.println("Restam " + book.getBookItem() + " exemplares");
-                    if (book.getBookItem() == 0) {
-                        System.out.println("Você pegou o último exemplar disponível!");
-                        book.setBookAvailability(false);
-                    }
-                } else {
-                    System.out.println("There are not available");
-                }
-                return;
-            }
-        }
-        System.out.println("Livro com ID " + id + " não encontrado");
-    }
-
-    public String returnBook(int id) {
-        for (Book book : books) {
-            if (book.getId() == id) {
-                if (!book.isBookAvailability()) {
-                    book.setBookAvailability(true);
-                    return "Livro devolvido: " + book.getTitle();
-                } else {
-                    return "O livro " + book.getTitle() + " não está emprestado!";
-                }
-            } else {
-                return "Livro com ID " + id + " não encontrado";
-            }
-        }
-        return "";
-    }
-
-    public String removeBook(int id) {
-        for (Book book : books) {
-            if(book.getId() == id){
-                books.remove(book);
-                return "Livro Removido: " + book.getTitle();
-            }
-        }
-        return "NOT FOUND";
-    }
+public class UserServices {
 
     public void addUser(String username, String email, String password) {
         User addNewUser = new User(username, email, password);
