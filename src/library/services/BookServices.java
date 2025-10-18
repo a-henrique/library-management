@@ -1,40 +1,37 @@
 package library.services;
 
 import library.model.Book;
-import library.model.User;
+import library.repository.BookRepository;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class BookServices {
 
-    ArrayList<Book> books = new ArrayList<>();
-    ArrayList<User> users = new ArrayList<>();
-    Scanner scanner = new Scanner(System.in);
+    final private BookRepository bookRepository;
+
+    public BookServices(BookRepository bookRepository){
+        this.bookRepository = bookRepository;
+    }
 
     public void addBook(String title, String author, String publisher, int bookItem) {
         Book newBook = new Book(title, author, publisher, bookItem);
-        books.add(newBook);
+        bookRepository.save(newBook);
     }
 
-    public String listBook() {
-        if (this.books.isEmpty()) {
-            return "Não há livros cadastrados!";
+    public ArrayList<Book> listBook() {
+        if (bookRepository.listAll().isEmpty()) {
+            return null;
+        } else {
+            return bookRepository.listAll();
         }
-        for (Book book : books) {
-            return book.toString();
-        }
-        return "";
     }
 
-    public String removeBook(int id) {
-        for (Book book : books) {
+    public void removeBook(int id) {
+        for (Book book : bookRepository.listAll()) {
             if(book.getId() == id){
-                books.remove(book);
-                return "Livro Removido: " + book.getTitle();
+                bookRepository.removeById(id);
             }
         }
-        return "NOT FOUND";
     }
 
 }

@@ -1,13 +1,19 @@
 package library.controller;
 
+import library.repository.BookRepository;
+import library.repository.UserRepository;
 import library.services.UserServices;
+
+import java.util.Scanner;
 
 public class UserController {
 
     final private UserServices userServices;
+    final private Scanner scanner;
 
-    public UserController(UserServices userServices){
+    public UserController(UserServices userServices, Scanner scanner){
         this.userServices = userServices;
+        this.scanner = scanner;
     }
 
     public void addUser() {

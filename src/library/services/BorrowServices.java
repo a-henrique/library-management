@@ -1,12 +1,15 @@
 package library.services;
-
 import library.model.Book;
-import library.model.Borrow;
+import library.repository.BorrowRepository;
 
-import java.util.ArrayList;
 
 public class BorrowServices {
-    ArrayList<Borrow> borrowHistory = new ArrayList<>();
+
+    final private BorrowRepository borrowRepository;
+
+    public BorrowServices(BorrowRepository borrowRepository){
+        this.borrowRepository = borrowRepository;
+    }
 
     public void borrowBook(int id) {
         for (Book book : books) { // Como é que eu vou ler os livros disponíveis agora?

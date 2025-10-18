@@ -1,13 +1,19 @@
 package library;
 
 import library.controller.BookController;
+import library.controller.BorrowController;
+import library.controller.UserController;
 
 public class Menu {
 
-    private BookController bookController;
+    final private BookController bookController;
+    final private BorrowController borrowController;
+    final private UserController userController;
 
-    public Menu(BookController bookController){
+    public Menu(BookController bookController, BorrowController borrowController, UserController userController){
         this.bookController = bookController;
+        this.borrowController = borrowController;
+        this.userController = userController;
     }
     public void showMenu() {
         System.out.println("======== LIBRARIAN ========");
@@ -33,25 +39,25 @@ public class Menu {
                 bookController.listBook();
                 break;
             case 3:
-                bookController.borrowBook();
+                borrowController.borrowBook();
                 break;
             case 4:
-                bookController.returnBook();
+                borrowController.returnBook();
                 break;
             case 5:
                 bookController.removeBook();
                 break;
             case 6:
-                bookController.addUser();
+                userController.addUser();
                 break;
             case 7:
-                bookController.removeUser();
+                userController.removeUser();
                 break;
             case 8:
-                bookController.listUser();
+                userController.listUser();
                 break;
             case 9:
-                bookController.editUser();
+                userController.editUser();
                 break;
             case 0:
                 break;

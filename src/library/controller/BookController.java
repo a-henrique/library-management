@@ -6,11 +6,11 @@ import java.util.Scanner;
 
 public class BookController {
     final private BookServices bookServices;
+    final private Scanner scanner;
 
-    Scanner scanner = new Scanner(System.in);
-
-    public BookController(BookServices bookServices) {
+    public BookController(BookServices bookServices, Scanner scanner) {
         this.bookServices = bookServices;
+        this.scanner = scanner;
     }
 
     public void addBook() {
@@ -22,7 +22,7 @@ public class BookController {
         String publisher = scanner.nextLine();
         System.out.println("Quantity exemplars: ");
         int bookItem = scanner.nextInt();
-        scanner.nextLine(); // Gambiarra para o Int não pular a proxima linha
+        scanner.nextLine();
         System.out.println("Livro adicionado!");
         bookServices.addBook(title, author, publisher, bookItem);
     }
@@ -34,8 +34,8 @@ public class BookController {
     public void removeBook() {
         System.out.println("Qual o id do Livro que deseja remover?");
         int id = scanner.nextInt();
-        scanner.nextLine();
-        System.out.println(bookServices.removeBook(id));
+        scanner.nextInt();
+        bookServices.removeBook(id);
     }
 
     // TODO: Create a new Method

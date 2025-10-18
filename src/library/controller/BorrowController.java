@@ -2,12 +2,16 @@ package library.controller;
 
 import library.services.BorrowServices;
 
+import java.util.Scanner;
+
 public class BorrowController {
 
     final private BorrowServices borrowServices;
+    final private Scanner scanner;
 
-    public BorrowController(BorrowServices borrowServices){
+    public BorrowController(BorrowServices borrowServices, Scanner scanner){
         this.borrowServices = borrowServices;
+        this.scanner = scanner;
     }
 
     public void borrowBook() {

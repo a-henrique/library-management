@@ -1,18 +1,25 @@
 package library.services;
 
 import library.model.User;
+import library.repository.UserRepository;
 
 public class UserServices {
 
+    final private UserRepository userRepository;
+
+    public UserServices(UserRepository userRepository){
+        this.userRepository = userRepository;
+    }
+
     public void addUser(String username, String email, String password) {
         User addNewUser = new User(username, email, password);
-        users.add(addNewUser);
+        userRepository.save(addNewUser);
     }
 
     public String removeUser(String id) {
-        for (User user : users){
+        for (User user : userRepository.listAllUsers()){
             if(user.getId().equals(id)){
-                users.remove(user);
+                userRepository.removeUser(id);
                 return "Usuário Removido: " + user.getUsername();
             }
         }
@@ -20,16 +27,16 @@ public class UserServices {
     }
 
     public void listUser() {
-        if (users.isEmpty()) {
+        if (userRepository.listAllUsers().isEmpty()) {
             System.out.println("Lista de usuários vazia!");
         }
-        for (User user : users) {
+        for (User user : userRepository.listAllUsers()) {
             System.out.println(user);
         }
     }
 
     public void editUser(String uuid) {
-        for (User user : users) {
+        for (User user : userRepository.listAllUsers()) {
             if (user.getId().equals(uuid)) {
                 System.out.println("[1] Name");
                 System.out.println("[2] Password");
