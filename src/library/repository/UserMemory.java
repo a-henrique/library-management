@@ -16,7 +16,7 @@ public class UserMemory implements UserRepository{
         users.remove(id);
     }
 
-    public ArrayList<User> listAll(){
+    public ArrayList<User> listAllUsers(){
         return users;
     }
 }

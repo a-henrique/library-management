@@ -37,9 +37,9 @@ public class UserController {
         userServices.listUser();
     }
 
-    public void editUser() {
-        System.out.println("User id that would you like edit?");
-        String uuid = scanner.nextLine();
-        userServices.editUser(uuid);
-    }
+//    public void editUser() {
+//        System.out.println("User id that would you like edit?");
+//        String uuid = scanner.nextLine();
+//        userServices.editUser(uuid);
+//    }
 }

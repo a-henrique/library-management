@@ -57,7 +57,7 @@ public class Menu {
                 userController.listUser();
                 break;
             case 9:
-                userController.editUser();
+//                userController.editUser();
                 break;
             case 0:
                 break;

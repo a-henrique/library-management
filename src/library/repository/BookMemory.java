@@ -4,7 +4,7 @@ import library.model.Book;
 
 import java.util.ArrayList;
 
-public class BookEmMemoria implements BookRepository {
+public class BookMemory implements BookRepository {
 
     private ArrayList<Book> books = new ArrayList<>();
 

@@ -17,14 +17,14 @@ public class LibraryApp {
         Scanner scanner = new Scanner(System.in);
 
         // Criando os repositories
-        BookRepository bookEmMemoria = new BookEmMemoria();
+        BookRepository bookEmMemoria = new BookMemory();
         BorrowRepository borrowMemory = new BorrowMemory();
         UserRepository userMemory = new UserMemory();
 
         // Montando os Services
         BookServices bookServices = new BookServices(bookEmMemoria);
-        BorrowServices borrowServices = new BorrowServices(borrowMemory);
         UserServices userServices = new UserServices(userMemory);
+        BorrowServices borrowServices = new BorrowServices(borrowMemory, bookServices, userServices);
 
         // Montando a relação Service/Controller
         BookController bookController = new BookController(bookServices, scanner);
@@ -36,6 +36,7 @@ public class LibraryApp {
         while(true){
             menu.showMenu();
             int option = scanner.nextInt();
+            scanner.nextLine();
             menu.choice(option);
         }
     }
