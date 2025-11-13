@@ -32,6 +32,5 @@ public class BookServices {
                 bookRepository.removeById(id);
             }
         }
-    }
-
+    }   
 }

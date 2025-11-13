@@ -18,7 +18,11 @@ public class BorrowController {
         System.out.println("What book id would you take borrow?");
         int id = scanner.nextInt();
         scanner.nextLine();
-        borrowServices.borrowBook(id);
+        if (borrowServices.borrowBook(id)) {
+            System.out.println("The Book is borrowed!");
+        } else {
+            System.out.println(2);
+        }
     }
 
     public void returnBook() {
