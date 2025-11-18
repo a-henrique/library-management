@@ -28,22 +28,16 @@ public class BorrowServices {
         return false;
     }
 
-
-    public String returnBook (int id){
-        for (Book book : bookServices.listBook()) {
+    public boolean returnBook (int id){
+        for (Book book : bookServices.listBook())
             if (book.getId() == id) {
+                book.setBookItem(1);
                 if (!book.isBookAvailability()) {
                     book.setBookAvailability(true);
-                    book.setBookItem(1);
-                    return "Livro devolvido: " + book.getTitle();
-                } else {
-                    return "O livro " + book.getTitle() + " não está emprestado!";
                 }
-            } else {
-                return "Livro com ID " + id + " não encontrado";
-            }
+                return true;
         }
-        return "";
+        return false;
     }
 
 }

@@ -20,8 +20,8 @@ public class BorrowController {
         scanner.nextLine();
         if (borrowServices.borrowBook(id)) {
             System.out.println("The Book is borrowed!");
-        } else {
-            System.out.println(2);
+        } else{
+            System.out.println("Book not Found!");
         }
     }
 

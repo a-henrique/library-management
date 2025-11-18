@@ -34,7 +34,11 @@ public class UserController {
     }
 
     public void listUser() {
-        userServices.listUser();
+        if (userServices.listUser() == null){
+            System.out.println("Empty List!");
+        } else {
+            System.out.println(userServices.listUser());
+        }
     }
 
 //    public void editUser() {

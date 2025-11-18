@@ -3,6 +3,8 @@ package library.services;
 import library.model.User;
 import library.repository.UserRepository;
 
+import java.util.ArrayList;
+
 public class UserServices {
 
     final private UserRepository userRepository;
@@ -16,23 +18,21 @@ public class UserServices {
         userRepository.save(addNewUser);
     }
 
-    public String removeUser(String id) {
+    public boolean removeUser(String id) {
         for (User user : userRepository.listAllUsers()){
             if(user.getId().equals(id)){
                 userRepository.removeUser(id);
-                return "Usuário Removido: " + user.getUsername();
+                return true;
             }
         }
-        return "NOT FOUND!";
+        return false;
     }
 
-    public void listUser() {
+    public ArrayList<User> listUser() {
         if (userRepository.listAllUsers().isEmpty()) {
-            System.out.println("Lista de usuários vazia!");
+            return null;
         }
-        for (User user : userRepository.listAllUsers()) {
-            System.out.println(user);
-        }
+        return userRepository.listAllUsers();
     }
 
 //    public void editUser(String uuid) {
