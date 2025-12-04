@@ -8,24 +8,6 @@ This project is focus on construct a management system for libraries and focus i
 - **Banco de Dados (futuro):** SQL
 - **Outros:**
 
-
-## 📂 Project Structure
-
-models/
-├── Book.java
-├── User.java
-└── Borrow.java
-
-services/
-├── BookService.java
-├── UserService.java
-└── BorrowService.java
-
-controllers/
-├── BookController.java
-├── UserController.java
-└── BorrowController.java
-
 ## ⚙️ Features:
 - Book Registry
 - Borrow Registry
@@ -35,6 +17,7 @@ controllers/
 
 ## 📝 Features Accomplishing:
 - [x] Ajuste para Livros com mais de um exemplar. Hoje não existe a regra, caso tenha mais de um livro exemplar, automaticamente todos ficam indisponíveis.
+- [x] Migração do projeto para Spring
 ---
 ### _1. Gerenciamento de Usuários_
   - [x] Cadastrar usuários (nome, ID, tipo: aluno, professor, visitante, etc.).
